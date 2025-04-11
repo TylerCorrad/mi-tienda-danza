@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DanceWear Hub - Tienda de Ropa y Accesorios de Danza</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- SDK de PayPal -->
+  <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
+</head>
+<body>
+  <header>
+    <h1>🩰 DanceWear Hub</h1>
+    <p>Equipamiento profesional para bailarines</p>
+    <label for="categoria">Filtrar por categoría:</label>
+    <select id="categoria" onchange="filtrarPorCategoria()">
+      <option value="todos">Todos</option>
+      <option value="ballet">Ballet</option>
+      <option value="contemporaneo">Contemporáneo</option>
+      <option value="jazz">Jazz</option>
+      <option value="accesorios">Accesorios</option>
+    </select>
+  </header>
+
+  <section id="productos" class="grid-productos"></section>
+
+  <section class="carrito">
+    <h2>🛒 Carrito de Compras</h2>
+    <p><strong>Productos en carrito: <span id="cantidad-carrito">0</span></strong></p>
+    <ul id="lista-carrito"></ul>
+    <p><strong>Total: $<span id="total">0.00</span></strong></p>
+    <button class="vaciar" onclick="vaciarCarrito()">🧼 Vaciar Carrito</button>
+    <button class="finalizar" onclick="finalizarCompra()">✅ Finalizar Compra</button>
+
+    <div class="pago">
+      <h3>💳 Método de pago</h3>
+      <div id="paypal-button-container" style="display: none;"></div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
